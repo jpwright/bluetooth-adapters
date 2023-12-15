@@ -19,6 +19,7 @@ if system() != "Windows":
         get_bluetooth_adapters,
         get_dbus_managed_objects,
     )
+    from .systems.linux_hci import get_adapters_from_hci
 
 from .history import AdvertisementHistory, load_history_from_managed_objects
 from .models import (
@@ -42,7 +43,6 @@ from .storage import (
     expire_stale_scanner_discovered_device_advertisement_data,
 )
 from .systems import get_adapters
-from .systems.linux_hci import get_adapters_from_hci
 from .util import adapter_human_name, adapter_model, adapter_unique_name
 
 __all__ = [
